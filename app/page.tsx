@@ -39,68 +39,42 @@ export default function Home() {
 
       <AnimatePresence mode="wait">
         {!isOpen ? (
-          // صفحه پاکت بسته
           <motion.div
             key="closed"
-            initial={{ opacity: 0, scale: 0.92 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.92, rotateY: 20 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6 }}
-            className="relative z-50 flex flex-col items-center"
+            className="relative z-50 flex items-center justify-center"
           >
             <button
               onClick={handleOpenLetter}
               aria-label="باز کردن نامه"
-              className="group relative mx-auto w-96 h-64 rounded-md shadow-2xl overflow-hidden transform-gpu transition-transform hover:-translate-y-1 active:translate-y-0"
+              style={{
+                border: "none",
+                cursor: "pointer",
+                background: "transparent",
+              }}
+              className="flex flex-col items-center justify-center focus:outline-none"
             >
-              {/* پاکت کرافت با texture و خطوط */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D2B48C]/95 to-[#C19A6B]/95 mix-blend-multiply"></div>
-              <div className="absolute inset-0 border-2 border-[#C19A6B]/30 rounded-md"></div>
-
-              {/* فلپ مثلثی */}
-              <div
-                className="absolute top-0 left-0 w-full h-32 origin-top shadow-md"
-                style={{
-                  clipPath: "polygon(0% 100%, 50% 0%, 100% 100%)",
-                  background: "linear-gradient(180deg,#D2B48C, #C19A6B)",
-                }}
+              <Mail
+                size={150}
+                className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72"
+                style={{ color: "rgb(25,124,130)" }}
               />
 
-              {/* مهر مومی */}
-              <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#DE5354] rounded-full flex items-center justify-center shadow-lg ring-2 ring-[#DE5354]/40">
-                <Sparkles className="h-8 w-8 text-white animate-pulse" />
-              </div>
-
-              {/* دکوراتورها */}
-              <div className="absolute top-4 left-4 text-4xl rotate-12 opacity-70">
-                🍁
-              </div>
-              <div className="absolute bottom-4 right-8 text-4xl -rotate-6 opacity-70">
-                🍁
-              </div>
-
-              {/* لوگو */}
-              <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
-                <Image
-                  src={logo}
-                  alt="Homeenger Logo"
-                  width={150}
-                  height={50}
-                  className="object-contain"
-                />
-              </div>
+              <span
+                className="absolute text-center font-semibold select-none"
+                style={{
+                  fontSize: "14px",
+                  color: "rgb(25,124,130)",
+                  textShadow: "0 2px 10px rgba(0,0,0,0.12)",
+                  top: "92px",
+                }}
+              >
+                باز کردن نامه
+              </span>
             </button>
-
-            {/* آیکون پاکت به‌همراه متن داخل یک باکس کوچک و قابل کلیک (خواناتر از متن ساده) */}
-            <div
-              className="mt-4 flex items-center gap-3 rounded-full px-4 py-2 bg-white/80 backdrop-blur-sm shadow-md border border-zinc-200 cursor-pointer"
-              onClick={handleOpenLetter}
-              role="button"
-              aria-hidden
-            >
-              <Mail className="h-6 w-6 text-zinc-700 group-hover:scale-110 transition-transform" />
-              <span className="text-sm text-zinc-800">باز کردن نامه</span>
-            </div>
           </motion.div>
         ) : (
           // محتوای نامه باز شده - لایه نیمه‌شفاف قوی‌تر (bg-white/95) برای جداسازی بهتر متن از بک‌گراند و دیده شدن متن - اضافه کردن text-shadow برای کنتراست بیشتر
