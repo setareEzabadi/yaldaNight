@@ -59,6 +59,7 @@ export default function Home() {
             >
               <Mail
                 size={150}
+                strokeWidth={1}
                 className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72"
                 style={{ color: "rgb(25,124,130)" }}
               />
@@ -113,7 +114,7 @@ export default function Home() {
               {/* متن ویژه درباره ۱ دقیقه بیشتر */}
               <div className="mb-8 rounded-lg bg-red-50 px-6 py-4 text-center dark:bg-red-950/30 drop-shadow-sm">
                 <p className="text-lg font-medium text-[#8B1E3F] drop-shadow-sm">
-                  امروز، ۱ دقیقه بیشتر پیش همیم 💫
+                  امشب، ۱ دقیقه بیشتر پیش همیم 💫
                 </p>
                 <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 drop-shadow-sm">
                   چون یلدا ۱ دقیقه از همه‌ی شب‌ها طولانی‌تره
