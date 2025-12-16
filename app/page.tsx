@@ -16,8 +16,9 @@ export default function Home() {
     setIsOpen(true);
   };
 
-  const lat = 36.69234779999999;
-  const lon = 53.9538035;
+  const lat = 36.714325;
+  const lon = 53.967663;
+
   return (
     <div
       className={`flex min-h-screen flex-col items-center justify-center p-4 font-vazir overflow-hidden relative ${
