@@ -147,12 +147,23 @@ export default function Home() {
               </div>
 
               {/* شعر حافظ */}
-              <div className="mb-10 text-center font-nastaliq text-lg leading-relaxed text-zinc-800 dark:text-zinc-200 drop-shadow-sm">
+              {/* <div className="mb-10 text-center font-nastaliq text-lg leading-relaxed text-zinc-800 dark:text-zinc-200 drop-shadow-sm">
                 <p>بیا تا گل برافشانیم و می در ساغر اندازیم</p>
                 <p>فلک را سقف بشکافیم و طرحی نو دراندازیم</p>
                 <p className="mt-6 text-sm italic text-zinc-600 drop-shadow-sm">
                   — حافظ
                 </p>
+              </div> */}
+              <div className="mb-10 flex justify-center">
+                <a
+                  href="https://hafez.taktemp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-white font-medium text-lg shadow-md hover:bg-[#1f7e84]/90 transition-colors drop-shadow-sm"
+                >
+                  <Sparkles className="h-5 w-5" />
+                  گرفتن فال حافظ
+                </a>
               </div>
 
               {/* جزئیات */}
