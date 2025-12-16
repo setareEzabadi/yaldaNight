@@ -121,14 +121,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* شعر حافظ */}
-              {/* <div className="mb-10 text-center font-nastaliq text-lg leading-relaxed text-zinc-800 dark:text-zinc-200 drop-shadow-sm">
-                <p>بیا تا گل برافشانیم و می در ساغر اندازیم</p>
-                <p>فلک را سقف بشکافیم و طرحی نو دراندازیم</p>
-                <p className="mt-6 text-sm italic text-zinc-600 drop-shadow-sm">
-                  — حافظ
-                </p>
-              </div> */}
               <div className="mb-10 flex justify-center">
                 <a
                   href="https://hafez.taktemp.com/"
