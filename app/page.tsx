@@ -138,7 +138,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="text-[#1f7e84] hover:underline"
                   >
-                    بندرگز،روستای وطنا،انتهای روستا،آخرین کوچه‌ی جنگل سمت راست
+                    بندرگز،روستای وطنا،انتهای روستا
                   </a>
                 </p>
               </div>
