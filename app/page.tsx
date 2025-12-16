@@ -1,5 +1,3 @@
-// app/page.tsx
-
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +7,6 @@ import Image from "next/image";
 import logo from "@/public/footerLogo.dd590cfd.png";
 import background from "@/public/background.png";
 
-// برای سمبول انار از ایموجی هندوانه استفاده می‌کنیم (چون انار ایموجی استاندارد نداره و قرمز رنگه مثل انار)
 const Pomegranate = () => <span className="text-5xl">🍉</span>;
 
 export default function Home() {
@@ -19,6 +16,8 @@ export default function Home() {
     setIsOpen(true);
   };
 
+  const lat = 36.69234779999999;
+  const lon = 53.9538035;
   return (
     <div
       className={`flex min-h-screen flex-col items-center justify-center p-4 font-vazir overflow-hidden relative ${
@@ -26,7 +25,6 @@ export default function Home() {
       }`}
       dir="rtl"
     >
-      {/* بک‌گراند فول‌پیج وقتی باز است - بلور قوی‌تر با فیلتر سفارشی (blur 40px) و opacity کمتر برای دیده شدن بهتر متن */}
       {isOpen && (
         <Image
           src={background}
@@ -78,23 +76,20 @@ export default function Home() {
             </button>
           </motion.div>
         ) : (
-          // محتوای نامه باز شده - لایه نیمه‌شفاف قوی‌تر (bg-white/95) برای جداسازی بهتر متن از بک‌گراند و دیده شدن متن - اضافه کردن text-shadow برای کنتراست بیشتر
           <motion.div
             key="open"
             initial={{ opacity: 0, rotateY: -180 }}
             animate={{ opacity: 1, rotateY: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="mx-auto max-w-lg z-50" // z-index بالاتر
+            className="mx-auto max-w-lg z-50"
           >
             <div className="rounded-2xl bg-white/95 p-10 shadow-2xl dark:bg-zinc-900/95">
-              {/* سمبول انار در بالا */}
               <div className="mb-6 flex justify-center gap-8">
                 <Pomegranate />
                 <Pomegranate />
                 <Pomegranate />
               </div>
 
-              {/* لوگو */}
               <div className="mb-8 flex justify-center">
                 <Image
                   src={logo}
@@ -105,13 +100,11 @@ export default function Home() {
                 />
               </div>
 
-              {/* عنوان اصلی - سطر اول رنگ متفاوت، یلدا قرمز - رنگ‌ها تیره‌تر برای کنتراست بهتر + text-shadow */}
               <h2 className="mb-6 text-center text-3xl font-semibold md:text-4xl text-zinc-900 dark:text-zinc-100 drop-shadow-md">
                 <span className="text-[#1f7e84]">دعوت به میهمانی شب </span>
                 <span className="text-[#DE5354]">یلدا</span>
               </h2>
 
-              {/* متن ویژه درباره ۱ دقیقه بیشتر */}
               <div className="mb-8 rounded-lg bg-red-50 px-6 py-4 text-center dark:bg-red-950/30 drop-shadow-sm">
                 <p className="text-lg font-medium text-[#8B1E3F] drop-shadow-sm">
                   امشب، ۱ دقیقه بیشتر پیش همیم 💫
@@ -133,17 +126,23 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* جزئیات */}
               <div className="mb-10 space-y-4 rounded-lg bg-zinc-50 px-8 py-6 text-center text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 drop-shadow-sm">
                 <p className="text-lg drop-shadow-sm">
                   <span className="font-medium">تاریخ:</span> جمعه ۲۸ آذر ۱۴۰۴
                 </p>
                 <p className="text-lg drop-shadow-sm">
-                  <span className="font-medium">مکان:</span> گرگان
+                  <span className="font-medium">مکان:</span>{" "}
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1f7e84] hover:underline"
+                  >
+                    بندرگز،روستای وطنا،انتهای روستا،آخرین کوچه‌ی جنگل سمت راست
+                  </a>
                 </p>
               </div>
 
-              {/* آیکون‌های یلدا با انار در وسط */}
               <div className="mb-8 flex items-center justify-center gap-6 drop-shadow-md">
                 <Heart className="h-10 w-10 text-[#de5354]" />
                 <Flame className="h-10 w-10 text-[#f59e0b]" />
@@ -152,7 +151,6 @@ export default function Home() {
                 <Gift className="h-10 w-10 text-[#7c3aed]" />
               </div>
 
-              {/* متن پایانی */}
               <p className="text-center text-lg text-zinc-700 dark:text-zinc-300 drop-shadow-sm">
                 با حضور شما، یلدا زیباتر می‌شود 🍉✨
               </p>
