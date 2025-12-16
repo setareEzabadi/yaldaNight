@@ -3,17 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* متغیرهای تم - فقط لایت، بدون تغییر خودکار */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* این بخش کاملاً حذف شد تا تم همیشه لایت بمونه */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+*/
 
 html,
 body {
